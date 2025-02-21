@@ -14,30 +14,29 @@ This guide provides step-by-step instructions for **editing the Podfile, install
    nano Podfile
    ```
 3. **Replace or add the following content:**
+   ```ruby
+   source 'https://cdn.cocoapods.org/'
 
-source 'https://cdn.cocoapods.org/'
-platform :ios, '13.0'
-use_frameworks! :linkage => :static 
-target 'UnityFramework' do
-  pod 'Firebase/Analytics', '10.25.0'
-  pod 'Firebase/Auth', '10.25.0'
-  pod 'Firebase/Core', '10.25.0'
-  pod 'Firebase/Firestore', '10.25.0'
-end
-target 'Unity-iPhone' do
-end
+   platform :ios, '12.0'
+   use_frameworks! :linkage => :static 
 
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17’
-      config.build_settings['OTHER_CPLUSPLUSFLAGS'] = '$(inherited) -fvisibility=hidden -fvisibility-inlines-hidden'
-      config.build_settings['CLANG_ENABLE_MODULES'] = 'YES'
-      config.build_settings['GCC_ENABLE_CPP_RTTI'] = 'YES'
-    end
-  end
-end
+   target 'UnityFramework' do
+     pod 'Firebase/Auth', '8.10.0'
+     pod 'Firebase/Core', '8.10.0'
+     pod 'Firebase/Firestore', '8.10.0'
+   end
 
+   target 'Unity-iPhone' do
+   end
+
+   post_install do |installer|
+     installer.pods_project.targets.each do |target|
+       target.build_configurations.each do |config|
+         config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
+       end
+     end
+   end
+   ```
 4. **Save and exit the editor:**
    - If using **Nano**, press:
      ```
