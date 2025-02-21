@@ -99,17 +99,4 @@ This guide provides step-by-step instructions for **editing the Podfile, install
 
 ---
 
-## ✅ Summary of Steps
-| **Step** | **Action** |
-|----------|-----------|
-| **Edit Podfile** | Add Firebase dependencies and enable C++17 |
-| **Install Dependencies** | Run `pod install` in the iOS build folder |
-| **Open Xcode** | Open `Unity-iPhone.xcworkspace` |
-| **Adjust Xcode Settings** | Set **iOS Deployment Target = 13.0** and **C++ Language Dialect = C++17** |
-| **Modify `UnityAppController.mm`** | Add `#import <Firebase.h>` and `[FIRApp configure]` |
-| **Build and Run** | Click "Run" in Xcode |
-
----
-
-### 🚀 Your Unity iOS project is now configured with Firebase!
-Let me know if you need further assistance. 😊
+### 🚀 Your Unity iOS project is now configured with Firebase! 【Not Really!!】
